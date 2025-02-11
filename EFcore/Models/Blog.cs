@@ -12,5 +12,11 @@ namespace EFcore.Models
         public int Id { get; set; }
         
         public string url{get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+
+        List<Blog> Blogs = new List<Blog>();
+
+
     }
 }
