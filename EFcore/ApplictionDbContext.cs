@@ -15,6 +15,7 @@ namespace EFcore
              option.UseSqlServer(@"Data Source=(localdb)\ProjectModels;Initial Catalog=EFCore;Integrated Security=True");
         protected override void OnModelCreating(ModelBuilder modelBuilder)//This for build the table in Database
         {
+            modelBuilder.Entity<Post>(); //This is a DomainModel
             new BlogEntityTypeConfigration().Configure(modelBuilder.Entity<Blog>());
 
             //modelBuilder.ApplyConfigurationsFromAssembly(typeof(BlogEntityTypeConfigration).Assembly);// this Performs the same work 

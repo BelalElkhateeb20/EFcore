@@ -54,9 +54,6 @@ namespace EFcore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"));
 
-                    b.Property<int>("BlogId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -67,23 +64,7 @@ namespace EFcore.Migrations
 
                     b.HasKey("PostId");
 
-                    b.HasIndex("BlogId");
-
                     b.ToTable("Post");
-                });
-
-            modelBuilder.Entity("EFcore.Models.Post", b =>
-                {
-                    b.HasOne("EFcore.Models.Blog", null)
-                        .WithMany("Posts")
-                        .HasForeignKey("BlogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EFcore.Models.Blog", b =>
-                {
-                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }
