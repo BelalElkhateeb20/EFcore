@@ -13,7 +13,7 @@ namespace EFcore.Configrations
     {
         public void Configure(EntityTypeBuilder<Blog> builder)
         {
-            builder.Property(p => p.url )
+            builder.Property(p => p.Url )
                 .IsRequired();
             builder.Property(p => p.Title )
                 .IsRequired();
