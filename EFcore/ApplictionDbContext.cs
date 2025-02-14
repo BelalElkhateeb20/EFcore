@@ -16,11 +16,13 @@ namespace EFcore
         protected override void OnModelCreating(ModelBuilder modelBuilder)//This for build the table in Database
         {
             //modelBuilder.Entity<Post>(); //This is a DomainModel
+
             new BlogEntityTypeConfigration().Configure(modelBuilder.Entity<Blog>());
             modelBuilder.Ignore<Post>();
+
             //To Exclude DomainModel From Migration 
-            modelBuilder.Entity<Blog>()
-                .ToTable("Blogs",p => p.ExcludeFromMigrations());
+            //modelBuilder.Entity<Blog>()
+            //    .ToTable("Blogs",p => p.ExcludeFromMigrations());
 
             //modelBuilder.ApplyConfigurationsFromAssembly(typeof(BlogEntityTypeConfigration).Assembly);// this Performs the same work 
         }

@@ -7,11 +7,15 @@ namespace EFcore
     {
         static void Main(string[] args)
         {
-            //var Blogs = new List<Blog>();
-            var _context = new ApplictionDbContext();
+           
+            using (var _context = new ApplictionDbContext())
+            {
+
+                _context.SaveChanges();
+            }
 
 
-            _context.SaveChanges();
+            
         }
     }
 }
