@@ -13,6 +13,7 @@ namespace EFcore
     {
         protected override void OnConfiguring(DbContextOptionsBuilder option) =>
              option.UseSqlServer(@"Data Source=(localdb)\ProjectModels;Initial Catalog=EFCore;Integrated Security=True");
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)//This for build the table in Database
         {
             //modelBuilder.Entity<Post>(); //This is a DomainModel
